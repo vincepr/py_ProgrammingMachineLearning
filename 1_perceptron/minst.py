@@ -19,10 +19,10 @@ def prepend_bias(X):
 
 # 60000 images, 785 elements ( 1bias + 28*28 px)
 # - squashed into one 60000x784 matrix
-X_train = prepend_bias(load_images("./ch6-8/train-images-idx3-ubyte.gz"))
+X_train = prepend_bias(load_images("./1_perceptron/train-images-idx3-ubyte.gz"))
 # 10000 images, 785 elements ( 1bias + 28*28 px) - so we dont train on the same data we evalute against
 # - squashed into one 10000x784 matrix
-X_test = prepend_bias(load_images("./ch6-8/t10k-images-idx3-ubyte.gz"))
+X_test = prepend_bias(load_images("./1_perceptron/t10k-images-idx3-ubyte.gz"))
 
 
 ### prepares minst-labels
@@ -49,13 +49,13 @@ def one_hot_encode(Y):
 
 ## the version where we just check if its a 5 or not:
 # 60k labels, each with value 1 if digit is five, 0 otherwise
-Y_train = encode_fives(load_labels("./ch6-8/train-labels-idx1-ubyte.gz"))
+Y_train = encode_fives(load_labels("./1_perceptron/train-labels-idx1-ubyte.gz"))
 # 1000 labels, with the same encoding as the training data
-Y_test = encode_fives(load_labels("./ch6-8/t10k-labels-idx1-ubyte.gz"))
+Y_test = encode_fives(load_labels("./1_perceptron/t10k-labels-idx1-ubyte.gz"))
 
 ## the version where we extend for multiple Y values (instead of just checking for 5)
-Y_train_unencoded = load_labels("./ch6-8/train-labels-idx1-ubyte.gz")
+Y_train_unencoded = load_labels("./1_perceptron/train-labels-idx1-ubyte.gz")
 Y_train_v2 = one_hot_encode(Y_train_unencoded)
-Y_test_v2 = load_labels("./ch6-8/t10k-labels-idx1-ubyte.gz")
+Y_test_v2 = load_labels("./1_perceptron/t10k-labels-idx1-ubyte.gz")
 
 # Result: Sucess: 9637/10000 (96.37%)

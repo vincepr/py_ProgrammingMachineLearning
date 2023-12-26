@@ -19,3 +19,4 @@
 data
 just_enough_python
 notebooks
+__pycache__

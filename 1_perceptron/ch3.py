@@ -22,7 +22,7 @@ def train(X, Y, iterations, lr):
         b -= b_gradient * lr
     return w, b
 
-X, Y = np.loadtxt("./ch1-5/pizza.txt", skiprows=1, unpack=True)
+X, Y = np.loadtxt("./1_perceptron/pizza.txt", skiprows=1, unpack=True)
 (w, b) = train(X, Y, iterations=20000, lr=0.001)
 print("resulting w = %.10f" % w)
 print("resulting b = %.10f" % b)

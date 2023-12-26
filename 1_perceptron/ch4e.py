@@ -17,10 +17,10 @@ def train(X, Y, iterations, lr):
         w -= gradient(X, Y, w) * lr
     return w
 
-x1, x2, x3, y = np.loadtxt("./ch1-5/pizza_3_vars.txt", skiprows=1, unpack=True)
+x1, x2, x3, y = np.loadtxt("./1_perceptron/life-expectancy-without-country-names.txt", skiprows=1, unpack=True)
 X = np.column_stack((np.ones(x1.size), x1, x2, x3))
 Y = y.reshape(-1, 1)
-w = train(X, Y, iterations=10000, lr=0.001)
+w = train(X, Y, iterations=99999, lr=0.0001)
 
 print("resulting w = %s" % w.T)
 print("\n a few predictions:")

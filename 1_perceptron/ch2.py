@@ -26,7 +26,7 @@ def train(X, Y, iterations, lr):
     raise Exception("Failed to get solution in %d iterations " % iterations)
 
 
-X, Y = np.loadtxt("./ch1-5/pizza.txt", skiprows=1, unpack=True)
+X, Y = np.loadtxt("./1_perceptron/pizza.txt", skiprows=1, unpack=True)
 (w, b) = train(X, Y, iterations=10000, lr=0.01)
 print("resulting w = %.3f" % w)
 print("resulting b = %.3f" % b)
