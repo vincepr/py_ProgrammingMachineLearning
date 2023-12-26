@@ -122,5 +122,5 @@ if __name__ == "__main__":
     w1, w2 = train(data.X_train, data.Y_train, data.X_test, data.Y_test, 
                    n_hidden_nodes=200, 
                    epochs=2,
-                   batch_size=256, # with roughly 60000 sets of training data this means 3 batchecs
+                   batch_size=256, # with roughly 60000 sets of training-data a value of 2000 would mean 3 batches
                    lr=0.01)
