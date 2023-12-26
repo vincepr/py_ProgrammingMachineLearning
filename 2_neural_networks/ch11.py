@@ -17,6 +17,7 @@ def prepend_bias(X):
     return np.insert(X, 0, 1, axis=1)
 
 # forward propagation - calculates the system's outputs from the systems inputs
+# here just with just 2 transforms, w1 and w2:  X*w1 => XX*w2 => Y
 # - 1. add a bias column
 # - 2. compute the weighted sum of the inputs using the first matrix of weights w1
 # - 3. pass the result trough the sigmoid function
@@ -89,7 +90,10 @@ def train(X_train, Y_train, X_test, Y_test, n_hidden_nodes, iterations, lr):
     return (w1, w2)
 
 import mnist as data
-w1, w2 = train(data.X_train, data.Y_train, data.X_test, data.Y_test, n_hidden_nodes=200, iterations=900, lr=0.01)
+w1, w2 = train(data.X_train, data.Y_train, data.X_test, data.Y_test, n_hidden_nodes=200, iterations=999, lr=0.01)
 
+## Results
+# Iterations:   650, Loss 0.44250703, Accuracy: 89.32f%
+# Iterations:   660, Loss 0.43927379, Accuracy: 89.41f%
 
 
